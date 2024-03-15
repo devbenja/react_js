@@ -7,7 +7,7 @@ console.log( owners );
 // Funciones comunes de arreglos
 
 // Find: Retorna un valor segun la condicion
-const getHeroeById = ( id ) => {
+export const getHeroeById = ( id ) => {
     return heroes.find(( heroe ) => heroe.id === id);
 };
 
