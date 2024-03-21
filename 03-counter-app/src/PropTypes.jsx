@@ -21,6 +21,8 @@ App.propTypes = {
     experience: PropTypes.number.isRequired,
 }
 
+// Default Props
+
 App.defaultProps = {
     experience: 2,
     profession: 'Student',

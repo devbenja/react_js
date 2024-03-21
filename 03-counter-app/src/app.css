@@ -1,3 +1,7 @@
 h3, p, code {
     color: #ffff;
 }
+
+button {
+    padding: 5px 25px;
+}
