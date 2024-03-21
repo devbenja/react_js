@@ -10,10 +10,11 @@ const newMessage = {
 const getResult = () => 'This is a Function';
 
 
-export const App = ( { name } ) => {
+export const App = ( { name, profession } ) => {
   return (
     <div>
-      <h3>{ `Hola ${ name } ${ lastName }` }</h3>
+      <h3>{ `I'm ${ name } ${ lastName }` }</h3>
+      <p>{ profession }</p>
       <code>{ JSON.stringify( newMessage ) }</code>
       <p>{ getResult() }</p>
     </div>
