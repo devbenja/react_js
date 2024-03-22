@@ -1,32 +1,33 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GiftGrid } from "./components/GiftGrid";
 
 export const GiftSearchApp = () => {
 
-    const [ categories, setCategories ] = useState([ 'Naruto', 'One Piece' ]);
+    // State que guarda las categorias
+    const [categories, setCategories] = useState(['Naruto']);
 
-    const addNewCategory = () => {
+    // Fn Agregar nuenva categoria con la Prop que retorna el input
+    const addNewCategory = ( newCategory ) => {
+
+        if ( categories.includes( newCategory ) ) return;
+
         // Usamos el operador spread para clonar los demas elementos del array
-        setCategories([ 'Champions League', ...categories ]);
+        setCategories([newCategory, ...categories]);
     };
 
-  return (
-    <>
-        <h1>Gift Search 😜</h1>
+    return (
+        <>
+            <h1>Gift Search😜</h1>
 
-        <AddCategory/>
+            <AddCategory onNewCategory={ event => addNewCategory(event) } />
 
-        <button onClick={ addNewCategory }>Add Category</button>
-
-        <ul>
             {
-                categories.map( category => {
-                    return <li key={ category }>{ category }</li>
-                })
+                categories.map(category => (
+                    <GiftGrid key={ category } category={ category } />
+                ))
             }
-        </ul>
-    </>
-  );
+        </>
+    );
 
 };
- 
